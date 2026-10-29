@@ -200,6 +200,9 @@ function GamePage() {
 
   return (
     <div className="page">
+      {/* Full-screen background image, only on the game page */}
+      <div className="game-background" />
+
       <div className="game-header">
         <h1>{game.name}</h1>
         {isFinished ? (

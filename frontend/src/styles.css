@@ -442,6 +442,20 @@ button:disabled {
   color: #ffffff;
 }
 
+/* ---------- Game page background ---------- */
+
+/* A fixed layer behind everything (background-attachment: fixed
+   doesn't work on iPhone, so we use a fixed div instead).
+   The purple gradient on top keeps the text easy to read. */
+.game-background {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(rgba(27, 15, 59, 0.75), rgba(27, 15, 59, 0.9)),
+    url('./assets/game-background.jpg') center / cover no-repeat;
+}
+
 /* ---------- Game page header ---------- */
 
 .game-header {
