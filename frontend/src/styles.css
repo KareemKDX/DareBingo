@@ -1,0 +1,1012 @@
+/* =========================================================
+   Bingospel – Svensexa edition
+   Party colors, mobile-first.
+   ========================================================= */
+
+:root {
+  /* Background */
+  --night: #1b0f3b;
+  --night-light: #2d1463;
+  --night-glass: rgba(27, 15, 59, 0.85);
+
+  /* Party colors */
+  --pink: #ff3d8b;
+  --yellow: #ffd23f;
+  --cyan: #2de2e6;
+  --orange: #ff7a1a;
+  --purple: #7c3aed;
+  --green: #22c55e;
+  --green-dark: #15803d;
+  --red: #ef4444;
+
+  /* Medals */
+  --gold: #ffc531;
+  --silver: #c9ced6;
+  --bronze: #d98a4a;
+
+  /* Text and cards */
+  --text: #1f1235;
+  --text-light: #f5f0ff;
+  --muted: #6b6185;
+  --muted-light: #b9aee0;
+  --card: #fffaf2;
+  --border: #e7e0f5;
+
+  --font-fun: 'Bungee', 'Arial Black', Impact, sans-serif;
+  --font-body: 'Nunito', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--text-light);
+  background-color: var(--night);
+  background-image:
+    radial-gradient(circle at 15% 10%, rgba(255, 61, 139, 0.25), transparent 40%),
+    radial-gradient(circle at 85% 30%, rgba(45, 226, 230, 0.18), transparent 40%),
+    radial-gradient(circle at 50% 90%, rgba(255, 210, 63, 0.12), transparent 45%);
+  background-repeat: no-repeat;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 12px 0;
+  font-family: var(--font-fun);
+  font-weight: normal;
+  letter-spacing: 0.5px;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+a {
+  color: var(--cyan);
+}
+
+/* ---------- Layout ---------- */
+
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.center-text {
+  text-align: center;
+  color: var(--muted-light);
+}
+
+/* White box used for forms, lists etc. */
+.section {
+  background: var(--card);
+  color: var(--text);
+  border-radius: 18px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.section a {
+  color: var(--purple);
+}
+
+.section .center-text {
+  color: var(--muted);
+}
+
+/* ---------- Logo ---------- */
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-ball {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 30% 30%, #ff8ab8, var(--pink) 60%, #c2185b);
+  box-shadow: 0 0 12px rgba(255, 61, 139, 0.7);
+  flex-shrink: 0;
+}
+
+.logo-ball-inner {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(--night);
+  font-family: var(--font-fun);
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-words {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-text {
+  font-family: var(--font-fun);
+  font-size: 18px;
+  color: #ffffff;
+  letter-spacing: 1px;
+  line-height: 1;
+}
+
+.logo-text-accent {
+  color: var(--yellow);
+}
+
+.logo-tagline {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--cyan);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Big version on login/signup */
+.logo-big {
+  flex-direction: column;
+  gap: 14px;
+  text-align: center;
+}
+
+.logo-big .logo-ball {
+  width: 86px;
+  height: 86px;
+  box-shadow: 0 0 30px rgba(255, 61, 139, 0.8);
+  animation: ball-bounce 2.4s ease-in-out infinite;
+}
+
+.logo-big .logo-ball-inner {
+  width: 56px;
+  height: 56px;
+  font-size: 32px;
+}
+
+.logo-big .logo-text {
+  font-size: 34px;
+  text-shadow: 3px 3px 0 var(--pink);
+}
+
+@keyframes ball-bounce {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(10deg);
+  }
+}
+
+/* ---------- Navbar ---------- */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: var(--night-glass);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 2px solid var(--pink);
+}
+
+.navbar-title {
+  text-decoration: none;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar-link {
+  color: var(--yellow);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+/* Hidden on small phones (shown from 420px, see bottom of file) */
+.navbar-user {
+  display: none;
+  font-size: 14px;
+  color: var(--muted-light);
+  max-width: 90px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ---------- Forms and buttons ---------- */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-weight: 800;
+  font-size: 14px;
+}
+
+input,
+textarea {
+  font-size: 16px; /* 16px stops iPhone from zooming in */
+  padding: 12px;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  width: 100%;
+  font-family: inherit;
+  background: #ffffff;
+  color: var(--text);
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--pink);
+}
+
+button {
+  font-size: 16px;
+  font-family: inherit;
+  font-weight: 800;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 16px;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+.button-primary {
+  background: linear-gradient(135deg, var(--pink), var(--orange));
+  color: #ffffff;
+  box-shadow: 0 4px 0 #b3165a;
+}
+
+.button-primary:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #b3165a;
+}
+
+.button-primary:disabled {
+  opacity: 0.6;
+}
+
+.button-danger {
+  background: var(--red);
+  color: #ffffff;
+}
+
+.button-secondary {
+  background: var(--border);
+  color: var(--text);
+}
+
+.button-small {
+  padding: 6px 10px;
+  font-size: 13px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+.error {
+  margin: 0 0 12px 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #fee2e2;
+  color: #991b1b;
+  font-weight: 700;
+}
+
+.info {
+  margin: 0 0 12px 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #dcfce7;
+  color: #166534;
+  font-weight: 700;
+}
+
+/* ---------- Auth pages ---------- */
+
+.auth-page {
+  max-width: 420px;
+  padding-top: 32px;
+}
+
+.auth-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.auth-page h2 {
+  text-align: center;
+}
+
+/* ---------- Badges ---------- */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 5px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.badge-active {
+  background: rgba(34, 197, 94, 0.18);
+  color: #4ade80;
+  border: 1px solid #4ade80;
+}
+
+/* Blinking "live" dot */
+.badge-active::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4ade80;
+  animation: live-blink 1.4s ease-in-out infinite;
+}
+
+.badge-finished {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--muted-light);
+  border: 1px solid var(--muted-light);
+}
+
+@keyframes live-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}
+
+/* ---------- Games list ---------- */
+
+.game-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.game-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 18px 16px;
+  background: linear-gradient(135deg, var(--night-light), #3b1a7a);
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  border-left: 6px solid var(--pink);
+  border-radius: 16px;
+  text-decoration: none;
+  color: #ffffff;
+  font-family: var(--font-fun);
+  font-size: 17px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.game-list-item:active {
+  transform: scale(0.98);
+}
+
+/* Inside a white section (admin) the list items stay dark */
+.section .game-list-item {
+  color: #ffffff;
+}
+
+/* ---------- Game page header ---------- */
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.game-header h1 {
+  margin: 0;
+  font-size: 22px;
+  word-break: break-word;
+}
+
+/* ---------- Top 3 podium ---------- */
+
+.top-three {
+  background: linear-gradient(160deg, var(--purple), var(--pink));
+  border-radius: 20px;
+  padding: 14px 12px 0 12px;
+  margin-bottom: 16px;
+  box-shadow: 0 8px 24px rgba(255, 61, 139, 0.35);
+  overflow: hidden;
+}
+
+.top-three-title {
+  text-align: center;
+  font-size: 16px;
+  color: #ffffff;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
+}
+
+.top-three-empty {
+  text-align: center;
+  margin: 0;
+  padding-bottom: 16px;
+  font-weight: 800;
+}
+
+.podium {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.podium-spot {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.podium-crown {
+  font-size: 22px;
+  line-height: 1;
+  animation: crown-wiggle 1.8s ease-in-out infinite;
+}
+
+.podium-medal {
+  font-size: 30px;
+  line-height: 1.1;
+}
+
+.podium-1 .podium-medal {
+  font-size: 40px;
+}
+
+.podium-name {
+  width: 100%;
+  font-weight: 800;
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.podium-1 .podium-name {
+  font-size: 16px;
+}
+
+.podium-points {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--yellow);
+  margin-bottom: 4px;
+}
+
+.podium-block {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px 12px 0 0;
+  font-family: var(--font-fun);
+  font-size: 22px;
+  color: rgba(0, 0, 0, 0.35);
+}
+
+.podium-1 .podium-block {
+  height: 72px;
+  background: linear-gradient(180deg, #ffe27a, var(--gold));
+}
+
+.podium-2 .podium-block {
+  height: 52px;
+  background: linear-gradient(180deg, #eef0f3, var(--silver));
+}
+
+.podium-3 .podium-block {
+  height: 38px;
+  background: linear-gradient(180deg, #f0b27a, var(--bronze));
+}
+
+.podium-empty .podium-medal {
+  opacity: 0.4;
+}
+
+.podium-empty .podium-block {
+  opacity: 0.5;
+}
+
+@keyframes crown-wiggle {
+  0%,
+  100% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(10deg) translateY(-3px);
+  }
+}
+
+/* ---------- My points ---------- */
+
+.my-points {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px dashed rgba(255, 210, 63, 0.6);
+}
+
+.my-points-label {
+  font-weight: 800;
+}
+
+.my-points-number {
+  font-family: var(--font-fun);
+  font-size: 28px;
+  color: var(--yellow);
+  line-height: 1;
+}
+
+.my-points-cards {
+  margin-left: auto;
+  font-size: 13px;
+  color: var(--muted-light);
+  text-align: right;
+}
+
+/* ---------- Challenge cards ---------- */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.challenge-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 140px;
+  padding: 30px 12px 12px 12px;
+  text-align: left;
+  background: var(--card);
+  color: var(--text);
+  border: 3px solid var(--border);
+  border-radius: 18px;
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  transition: transform 0.1s ease;
+}
+
+.challenge-card:active {
+  transform: translateY(3px) scale(0.98);
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.25);
+}
+
+/* Small bingo ball with the card number */
+.card-number {
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  min-width: 24px;
+  height: 24px;
+  padding: 0 6px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-fun);
+  font-size: 12px;
+  background: var(--night);
+  color: #ffffff;
+}
+
+.challenge-text {
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+/* Points badge – shared */
+.challenge-points {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+  align-self: flex-start;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.points-number {
+  font-family: var(--font-fun);
+  line-height: 1;
+}
+
+.points-word {
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+/* 1 point: simple and calm */
+.card-low {
+  border-color: var(--border);
+}
+
+.points-low {
+  background: #efeaf8;
+  color: var(--muted);
+}
+
+.points-low .points-number {
+  font-size: 15px;
+}
+
+/* 2 points: cool blue with a star */
+.card-mid {
+  border-color: var(--cyan);
+  background: linear-gradient(180deg, #ffffff, #e6fbfc);
+}
+
+.card-mid .card-number {
+  background: #0e7c86;
+}
+
+.points-mid {
+  background: linear-gradient(135deg, var(--cyan), #3b82f6);
+  color: #ffffff;
+}
+
+.points-mid .points-number {
+  font-size: 20px;
+}
+
+/* 3+ points: JACKPOT – big, fiery and glowing */
+.card-high {
+  border-color: var(--orange);
+  background: linear-gradient(180deg, #fff6d6, #ffe0c2);
+  box-shadow:
+    0 6px 0 rgba(0, 0, 0, 0.25),
+    0 0 18px rgba(255, 122, 26, 0.55);
+}
+
+.card-high .card-number {
+  background: var(--orange);
+}
+
+.points-high {
+  align-self: stretch;
+  justify-content: center;
+  padding: 6px 10px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--yellow), var(--orange), var(--pink));
+  color: #ffffff;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+  animation: jackpot-pulse 1.6s ease-in-out infinite;
+}
+
+.points-high .points-number {
+  font-size: 30px;
+}
+
+.points-high .points-word {
+  font-size: 13px;
+}
+
+.points-icon {
+  font-size: 16px;
+}
+
+.points-high .points-icon {
+  font-size: 22px;
+}
+
+@keyframes jackpot-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Completed card: green with a rotated "KLAR" stamp */
+.challenge-card.done {
+  background: linear-gradient(160deg, var(--green), var(--green-dark));
+  border-color: #86efac;
+  color: #ffffff;
+  box-shadow: 0 6px 0 #0f5a2b;
+}
+
+.challenge-card.done .challenge-text {
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+  opacity: 0.85;
+}
+
+.challenge-card.done .challenge-points {
+  background: rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+  animation: none;
+}
+
+.challenge-card.done .card-number {
+  background: #ffffff;
+  color: var(--green-dark);
+}
+
+.done-stamp {
+  position: absolute;
+  top: 8px;
+  right: -6px;
+  padding: 3px 14px;
+  font-family: var(--font-fun);
+  font-size: 13px;
+  color: var(--green-dark);
+  background: var(--yellow);
+  border-radius: 6px;
+  transform: rotate(12deg);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  animation: stamp-in 0.3s ease-out;
+}
+
+@keyframes stamp-in {
+  0% {
+    transform: rotate(12deg) scale(2);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(12deg) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Locked card (game finished) */
+.challenge-card.locked {
+  opacity: 0.6;
+  filter: grayscale(0.4);
+}
+
+.challenge-card.locked:active {
+  transform: none;
+}
+
+.challenge-card.locked .points-high {
+  animation: none;
+}
+
+/* ---------- Full leaderboard ---------- */
+
+.leaderboard-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.leaderboard-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  margin-bottom: 6px;
+  border-radius: 12px;
+  background: #f4effc;
+}
+
+.leaderboard-rank {
+  width: 32px;
+  text-align: center;
+  font-size: 20px;
+  font-family: var(--font-fun);
+}
+
+.leaderboard-name {
+  flex: 1;
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.leaderboard-score {
+  font-family: var(--font-fun);
+  font-size: 15px;
+}
+
+.rank-1 {
+  background: linear-gradient(90deg, #fff1b8, #ffe27a);
+}
+
+.rank-2 {
+  background: linear-gradient(90deg, #f3f4f6, #e2e5ea);
+}
+
+.rank-3 {
+  background: linear-gradient(90deg, #fbe3cf, #f0c39c);
+}
+
+.is-me {
+  outline: 3px solid var(--pink);
+}
+
+.is-me .leaderboard-name::after {
+  content: ' (du)';
+  color: var(--pink);
+}
+
+/* ---------- Winner banner ---------- */
+
+.winner-banner {
+  position: relative;
+  text-align: center;
+  padding: 24px 16px;
+  margin-bottom: 16px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #ffe27a, var(--gold), var(--orange));
+  color: #4a2600;
+  box-shadow: 0 0 30px rgba(255, 197, 49, 0.6);
+}
+
+.winner-banner::before {
+  content: '🎉';
+  position: absolute;
+  top: 10px;
+  left: 14px;
+  font-size: 30px;
+}
+
+.winner-banner::after {
+  content: '🍾';
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 30px;
+}
+
+.winner-trophy {
+  font-size: 64px;
+  line-height: 1;
+  animation: ball-bounce 2s ease-in-out infinite;
+}
+
+.winner-label {
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 8px;
+}
+
+.winner-name {
+  font-family: var(--font-fun);
+  font-size: 34px;
+  margin: 6px 0;
+  word-break: break-word;
+  color: #ffffff;
+  text-shadow: 3px 3px 0 var(--pink);
+}
+
+.winner-points {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+/* ---------- Admin ---------- */
+
+.admin-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.admin-challenge {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.admin-challenge:last-child {
+  border-bottom: none;
+}
+
+.admin-challenge-row {
+  display: flex;
+  gap: 8px;
+}
+
+.points-input {
+  width: 90px;
+  flex-shrink: 0;
+}
+
+/* ---------- Bigger screens ---------- */
+
+@media (min-width: 420px) {
+  .navbar-user {
+    display: inline;
+  }
+}
+
+@media (min-width: 600px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .navbar-user {
+    max-width: 200px;
+  }
+
+  .challenge-text {
+    font-size: 16px;
+  }
+}
+
+/* ---------- Less motion for those who want it ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
